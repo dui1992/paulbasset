@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paul Bassett Korea</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- aos 연결 -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- https://michalsnik.github.io/aos/ -->
+   <script src="lib/jquery-3.7.1.min.js"></script>
+   <script>
+    window.onload = () => {
+      let bestMenu = document.querySelectorAll('.best_nav li');
+      let bestCont = document.querySelectorAll('.menu_list');
+      let header = document.querySelector('.header');
+
+      for (let i = 0; i < bestMenu.length; i++){
+        bestMenu[i].addEventListener('click', () => {
+          bestMenu.forEach((bestMenuWrap) => {
+            bestMenuWrap.classList.remove('on');
+          })
+          bestMenu[i].classList.add('on');
+
+          bestCont.forEach((bestContWrap) => {
+            bestContWrap.classList.remove('on');
+          });
+          bestCont[i].classList.add('on');
+        });
+      };
+
+      window.addEventListener('wheel', (event) => {
+        let wheelScroll = event.deltaY;
+        
+        if (wheelScroll > 0) {
+          header.classList.add('on');
+        } else {
+          header.classList.remove('on');
+        }
+      })
+    }
+   </script>
+   <script>
+    $(function(){
+      let depth01 = $('.pc .gnb>li');
+      let depth02 = $('.pc .gnb .depth02')
+
+      depth01.mouseenter(function(){
+        $(this).children().stop().slideDown(200);
+      });
+
+      depth01.mouseleave(function(){
+        depth02.stop().slideUp();
+      });
+    });
+   </script>
+
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="inner">
+      <h1 class="logo"><a href="#"><img src="img/header/header_logo.png" alt="폴바셋 메인 로고" /></a></h1>
+      
+      <nav class="pc pc_nav">
+        <ul class="gnb">
+          <li>
+            <a href="#" class="depth01">ABOUT</a>
+            <ul class="depth02">
+              <li><a href="#">Brand</a></li>
+              <li><a href="#">회사소개</a></li>
+              <li><a href="#">CSR</a></li>
+            </ul><!-- .depth02 -->
+          </li>
+
+          <li>
+            <a href="#" class="depth01">MENU</a>
+            <ul class="depth02">
+              <li><a href="#">NEW</a></li>
+              <li><a href="#">COFFEE</a></li>
+              <li><a href="#">BEVERAGE</a></li>
+              <li><a href="#">ICE-CREAM</a></li>
+              <li><a href="#">FOOD</a></li>
+              <li><a href="#">PRODUCT</a></li>
+            </ul><!-- .depth02 -->
+          </li>
+          
+          <li>
+            <a href="#" class="depth01">STORE</a>
+            <ul class="depth02">
+              <li><a href="#">매장찾기</a></li>
+            </ul><!-- .depth02 -->
+          </li>
+
+          <li>
+            <a href="#" class="depth01">SOCIETY</a>
+            <ul class="depth02">
+              <li><a href="#">Paul Bassett Society</a></li>
+              <li><a href="#">회원 등급 혜택</a></li>
+              <li><a href="#">e-Card 선물</a></li>
+              <li><a href="#">모바일 APP 안내</a></li>
+              <li><a href="#">제휴혜택 안내</a></li>
+            </ul><!-- .depth02 -->
+          </li>
+
+          <li>
+            <a href="#" class="depth01">NEWS</a>
+            <ul class="depth02">
+              <li><a href="#">News</a></li>
+              <li><a href="#">Event</a></li>
+              <li><a href="#">Notice</a></li>
+            </ul><!-- .depth02 -->
+          </li>
+
+          <li><a href="#" class="depth01">E-SHOP</a></li>
+          <li><a href="#" class="depth01">납품문의</a></li>
+
+        </ul><!-- /gnb -->
+
+        <ul class="util">
+          <li><a href="#">LOGIN</a></li>
+          <li><a href="#">JOIN</a></li>
+          <li><a href="#"><img src="img/header/header_user.png" alt="마이 페이지" /></a></li>
+          <li><a href="#"><img src="img/header/header_search.png" alt="검색" /></a></li>
+        </ul><!-- /util -->
+      </nav><!-- .pc_nav -->
+
+    </div><!-- /header_wrap -->
+  </header><!-- /header -->
+
+  <main class="main">
+    <section class="main_visual">
+      <div class="inner">
+
+        <div class="visual_txt">
+          <div class="title">
+            <h2>SPRING<br />FLAVORS</h2>
+            <p>입 안에서 피어나는 제주의 봄</p>
+          </div><!-- /title -->
+          <a href="#">자세히 보기</a>
+        </div><!-- /visual_txt -->
+
+        <div class="visual_img">
+          <figure><img data-aos="fade-down" data-aos-duration="1000" src="img/main/main_visual_silde_01.png"
+              alt="제주 말차 아이스크림컵" /></figure>
+          <figure><img data-aos="fade-up" data-aos-duration="1000" src="img/main/main_visual_silde_02.png"
+              alt="제주 말차 크림 라떼" /></figure>
+          <figure><img data-aos="fade-down" data-aos-duration="1000" src="img/main/main_visual_silde_03.png"
+              alt="제주 말차 한라봉 스무디" /></figure>
+        </div><!-- /visual_img -->
+
+      </div><!-- /inner -->
+    </section><!-- /main_visual -->
+
+    <section class="best">
+      <div class="inner">
+
+        <div class="best_txt">
+          <div class="left">
+            <h3>Best Menu</h3>
+            <ul class="best_nav">
+              <li class="on">COFFEE</li>
+              <li>BEVERAGE</li>
+              <li>ICE CREAM</li>
+              <li>FOOD</li>
+            </ul><!-- /best_nav -->
+          </div><!-- /left -->
+          <a href="#">전체 보기
+            <img src="img/main/view_iconpng.png" alt="자세히 보기" />
+          </a>
+        </div><!-- /best_txt -->
+
+        <div class="menu_list on">
+
+          <div class="menu_box">
+            <figure><img src="img/main/best_01.png" alt="아이스 룽고" /></figure>
+            <div class="txt_box">
+              <strong>아이스 룽고</strong>
+              <p>Iced Rungo</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best_02.png" alt="룽고" /></figure>
+            <div class="txt_box">
+              <strong>룽고</strong>
+              <p>Rungo</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best_03.png" alt="아이스 아메리카노" /></figure>
+            <div class="txt_box">
+              <strong>아이스 아메리카노</strong>
+              <p>Iced Americano</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best_04.png" alt="아이스 카페라떼" /></figure>
+            <div class="txt_box">
+              <strong>아이스 카페라떼</strong>
+              <p>Iced Cafe Latte</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best_05.png" alt="아이스 바닐라빈 카페라떼" /></figure>
+            <div class="txt_box">
+              <strong>아이스 바닐라빈 카페라떼</strong>
+              <p>Iced Vanilla Bean Cafe Latte</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+        </div><!-- .menu_list -->
+
+        <div class="menu_list">
+
+          <div class="menu_box">
+            <figure><img src="img/main/best-beverage01.png" alt="아이스 룽고" /></figure>
+            <div class="txt_box">
+              <strong>제주 한라봉 에이드</strong>
+              <p>Jeju Hallabong Ade</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best-beverage02.png" alt="룽고" /></figure>
+            <div class="txt_box">
+              <strong>망고 파인애플 프라페</strong>
+              <p>Mango Pineapple Frappe</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best-beverage03.png" alt="아이스 아메리카노" /></figure>
+            <div class="txt_box">
+              <strong>머스크멜론 빙수</strong>
+              <p>Musk Melon Ice Flakes</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best-beverage04.png" alt="아이스 카페라떼" /></figure>
+            <div class="txt_box">
+              <strong>초콜릿 아이스크림 라떼</strong>
+              <p>Chocolate Ice Cream Latte</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best-beverage05.png" alt="아이스 바닐라빈 카페라떼" /></figure>
+            <div class="txt_box">
+              <strong>고창 수박주스</strong>
+              <p>Watermelon Juice</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+        </div><!-- .menu_list -->
+
+        <div class="menu_list">
+
+          <div class="menu_box">
+            <figure><img src="img/main/best-icecream01.png" alt="아이스 룽고" /></figure>
+            <div class="txt_box">
+              <strong>매직 트위스트 아이스크림(콘)</strong>
+              <p>Magic Twist Ice Cream (Cone)</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best-icecream02.png" alt="룽고" /></figure>
+            <div class="txt_box">
+              <strong>밀크 아이스크림</strong>
+              <p>Milk Ice Cream</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best-icecream03.png" alt="아이스 아메리카노" /></figure>
+            <div class="txt_box">
+              <strong>머스크 멜론 아이스크림</strong>
+              <p>Honeycomb Ice Cream</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best-icecream04.png" alt="아이스 카페라떼" /></figure>
+            <div class="txt_box">
+              <strong>벌집꿀 토핑 아이스크림</strong>
+              <p>Iced Cafe Latte</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best-icecream05.png" alt="아이스 바닐라빈 카페라떼" /></figure>
+            <div class="txt_box">
+              <strong>초코퍼지 토핑 아이스크림</strong>
+              <p>Choco Fudge Ice Cream</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+        </div><!-- .menu_list -->
+
+        <div class="menu_list">
+
+          <div class="menu_box">
+            <figure><img src="img/main/best-food01.png" alt="아이스 룽고" /></figure>
+            <div class="txt_box">
+              <strong>나타 오리지널</strong>
+              <p>Nata Original</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best-food02.png" alt="룽고" /></figure>
+            <div class="txt_box">
+              <strong>피칸파이</strong>
+              <p>Pecan Pie</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best-food03.png" alt="아이스 아메리카노" /></figure>
+            <div class="txt_box">
+              <strong>햄에그 잉글리시머핀</strong>
+              <p>Ham & egg English Muffin</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best-food04.png" alt="아이스 카페라떼" /></figure>
+            <div class="txt_box">
+              <strong>BELT 샌드위치</strong>
+              <p>BELT Sandwich</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+          <div class="menu_box">
+            <figure><img src="img/main/best-food05.png" alt="아이스 바닐라빈 카페라떼" /></figure>
+            <div class="txt_box">
+              <strong>우유크림 롤</strong>
+              <p>Milk Cream Roll</p>
+            </div><!-- txt_box -->
+          </div><!-- /menu_box -->
+
+        </div><!-- .menu_list -->
+
+      </div><!-- /inner -->
+    </section><!-- /best -->
+
+    <section class="promotion">
+      <div class="inner">
+
+        <ul class="promotion_list">
+          <li><a href="#"><img src="img/main/promotion_01.png" alt="" /></a></li>
+          <li><a href="#"><img src="img/main/promotion_02.png" alt="" /></a></li>
+        </ul><!-- /promotion_list -->
+
+        <div class="promotion_txt">
+          <div class="title">
+            <h3>Promotion</h3>
+            <p>진행 중인 프로모션을 확인하고<br />혜택 챙겨가세요!</p>
+          </div><!-- /title -->
+          <a href="#">목록 보기</a>
+        </div><!-- /promotion_txt -->
+
+      </div><!-- /inner -->
+    </section><!-- /promotion -->
+
+    <section class="bean">
+      <div class="inner">
+        <div class="bean_txt">
+          <div class="title">
+            <h3>
+              Paul Bassett<br />
+              Signature<br />
+              Blend
+            </h3>
+            <p>월드 바리스타 챔피언십 최연소 우승자<br />
+              Paul Bassett이 세계 커피 산지에서 선별한<br />
+              최상급 생두를 국내 전용 로스팅 팩토리에서<br />
+              철저한 생산관리 시스템 아래 관리되는<br />
+              폴 바셋 커피만의 원두를 확인하세요.</p>
+          </div><!-- /title -->
+          <a href="#">자세히 보기</a>
+        </div><!-- /bean_txt -->
+
+        <figure><img src="img/main/bean_paulbassett.jpg" alt="" /></figure>
+
+      </div><!-- /innet -->
+    </section><!-- /bean -->
+
+    <section class="member">
+      <div class="inner">
+        <div class="left">
+          <img src="img/main/membership_logo.png" alt="원형 엠블럼" />
+          <div class="member_txt">
+            <h4>
+              폴 바셋 커피의 플래티넘 회원이 되어보세요!
+            </h4>
+            <p>
+              Paul Bassett 브랜드 회원만을 위하는 멤버십 서비스 입니다.<br />
+              폴 바셋 소사이어티 카드로 결제하고 크라운을 모으면 다양한 등급별 혜택을 받을 수 있습니다.
+            </p>
+            <strong>
+              플래티넘 회원이 되어 더 풍성한 Exclusive Benefits을 누려보세요.
+            </strong>
+          </div><!-- /member_txt -->
+        </div><!-- /left -->
+        <a href="#">자세히 보기</a>
+      </div><!-- /inner -->
+    </section><!-- /member -->
+
+    <section class="b2b">
+      <div class="inner">
+        <div class="b2b_txt">
+          <div class="txt">
+            <h4>폴 바셋 원두 납품 혜택</h4>
+            <p>폴바셋만의 비법으로 블렌딩하여 탄생한 Signature Blend와<br />
+              폴 바셋에게 사사받은 오랜 경력의 Coffee Ambassador의<br />
+              관리 서비스 프로그램을 제안합니다.</p>
+          </div><!-- /txt -->
+          <a href="#">자세히 보기</a>
+        </div><!-- /b2b_txt -->
+
+        <div class="b2b_img">
+
+          <div class="icon">
+            <img src="img/main/b2b_icon_01.png" alt="혜택1" />
+            <strong>Coffee Ambassador의<br />
+              지속적인 사후 관리</strong>
+          </div><!-- /icon -->
+
+          <div class="icon">
+            <img src="img/main/b2b_icon_02.png" alt="혜택2" />
+            <strong>홍보물 제공</strong>
+          </div><!-- /icon -->
+
+          <div class="icon">
+            <img src="img/main/b2b_icon_03.png" alt="혜택3" />
+            <strong>주문 후 맞춤 생산을 통한<br />
+              신선한 원두 품질 관리</strong>
+          </div><!-- /icon -->
+
+          <div class="icon">
+            <img src="img/main/b2b_icon_04.png" alt="혜택4" />
+            <strong>다양한 커스텀<br />
+              서비스 제공</strong>
+          </div><!-- /icon -->
+
+        </div><!-- /b2b_img -->
+      </div><!-- /inner -->
+    </section><!-- /b2b -->
+
+  </main><!-- /main -->
+
+  <footer class="footer">
+    <div class="inner">
+      <div class="left">
+        <div class="title">
+          <h2><img src="img/footer/footer_logo.png" alt="폴바셋 로고"></h2>
+          <div class="cs">
+            <img src="img/footer/cs_center_icon.png" alt="전화기" />
+            <strong>고객센터 1899-8829</strong>
+          </div>
+        </div><!-- /title -->
+        <div class="menu">
+          <ul class="company">
+            <li><a href="#">폴바셋소개</a></li>
+            <li><a href="#">매장안내</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">신규입점</a></li>
+            <li><a href="#">납품안내</a></li>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">채용</a></li>
+          </ul><!-- /company -->
+          <ul class="article">
+            <li><a href="#">
+              개인정보처리방침</a></li>
+              <li><a href="#">이용약관</a></li>
+              <li><a href="#">윤리 HOT-LINE</a></li>
+              <li><a href="#">사이트맵</a></li>
+          </ul><!-- /article -->
+          <p class="add">엠즈씨드(주) 대표이사 : 권태훈 주소 : 서울특별시 강남구 도산대로 75길 22 (청담동)<br />
+            사업자등록번호 211-88-95935 대표번호 1899-8829 개인정보관리책임자 : 정보문</p>
+          <p class="copyright">
+            © 2019 m’s seed Co., Ltd. All rights reserved.</p>
+        </div><!-- /_menu -->
+      </div><!-- /left -->
+
+      <div class="right">
+        <div class="sns">
+          <a href="#"><img src="img/footer/footer_facebook.png" alt="페이스북" /></a>
+          <a href="#"><img src="img/footer/footer_instagram.png" alt="인스타그램" /></a>
+          <a href="#"><img src="img/footer/footer_youtube.png" alt="유튜브" /></a>
+        </div><!-- /sns -->
+        <div class="mark">
+          <img src="img/footer/footer_ccm.png" alt="ccm" />
+          <img src="img/footer/footer_brandaward.png" alt="브랜드어워트" />
+        </div><!-- /mark -->
+      </div><!-- /right -->
+    </div><!-- /inner -->
+  </footer><!-- /footer -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+
+</html>
